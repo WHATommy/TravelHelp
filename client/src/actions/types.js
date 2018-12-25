@@ -1,0 +1,8 @@
+export const GET_ERRORS = 'GET_ERRORS';
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const GET_COUNTRY_INFO = 'GET_COUNTRY_INFO';
+
+export const GET_POSTS_INFO = 'GET_POSTS_INFO';
+export const CREATE_POST_INFO = 'CREATE_POSTS_INFO';
+export const EDIT_POST_INFO = 'EDIT_POSTS_INFO';
+export const DELETE_POST_INFO = 'DELETE_POSTS_INFO';
