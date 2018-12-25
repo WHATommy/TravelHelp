@@ -1,11 +1,28 @@
 {
-  "name": "travelhelper",
+  "name": "travelhelp",
   "version": "1.0.0",
-  "description": "A app that will help travelers know what to expect from different countries",
+  "description": "",
   "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix frontend",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WHATommy/TravelHelp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WHATommy/TravelHelp/issues"
+  },
+  "homepage": "https://github.com/WHATommy/TravelHelp#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "bcrypt": "^3.0.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "concurrent": "^0.3.2",
@@ -15,19 +32,6 @@
     "mongoose": "^5.4.0",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "validator": "^10.9.0"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.9"
-  },
-  "scripts": {
-    "client-install": "npm install --prefix client",
-    "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
-  },
-  "author": "Tommy Tran",
-  "license": "ISC"
+    "validator": "^10.10.0"
+  }
 }
