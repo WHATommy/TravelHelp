@@ -1,5 +1,9 @@
-import { GET_ERRORS, GET_POSTS_INFO, CREATE_POST_INFO, GET_MYPOST_INFO } from './types'
+import { GET_ERRORS, GET_POSTS_INFO, CREATE_POST_INFO, GET_MYPOST_INFO, DELETE_MYPOST_INFO } from './types'
 import axios from 'axios';
+import setAuthToken from '../utils/setAuthToken'
+import { setCurrentUser } from '../actions/authAction'
+import jwt_decode from 'jwt-decode'
+import store from '../store'
 
 export const getPost = (post) => dispatch => {
     axios
@@ -15,6 +19,11 @@ export const getPost = (post) => dispatch => {
                     text: stat.text
                 }
             })
+            if (localStorage.jwtToken) {
+                setAuthToken(localStorage.jwtToken)
+                const decoded = jwt_decode(localStorage.jwtToken)
+                store.dispatch(setCurrentUser(decoded));
+            }
             dispatch({
                 type: GET_POSTS_INFO,
                 payload: posts
@@ -37,6 +46,7 @@ export const createPost = (posts) => dispatch => {
         .post('http://localhost:5000/api/posts/', posts)
         .then(res => {
             console.log(res)
+            alert('Successfully created!')
         })
         .catch(err =>
             dispatch({
@@ -46,6 +56,24 @@ export const createPost = (posts) => dispatch => {
         )
 }
 
+export const deletePost = id => dispatch => {
+    axios
+        .delete(`http://localhost:5000/api/posts/${id}`)
+        .then(res => {
+            console.log(res);
+            dispatch({
+                type: DELETE_MYPOST_INFO,
+                payload: id
+            })
+        })
+        .catch(err => {
+            console.log(err)
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        })
+}
 export const getMyPost = () => dispatch => {
     axios
         .get('http://localhost:5000/api/posts/')

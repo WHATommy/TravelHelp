@@ -9,7 +9,7 @@ body {
     background-size: cover;
     height: 100%;
     overflow: hidden;*/
-    background-color: rgb(238, 216, 210);
+    background-color: rgb(225, 238, 243);
 }
 
 /*Landing*/
@@ -55,6 +55,7 @@ body {
 }
 
 .searchBarSubmit {
+    transition: 0.12s;
     font-family: 'Muli';
     font-weight: bold;
     margin: 5px;
@@ -68,6 +69,11 @@ body {
     display: inline-block;
     font-size: 16px;
     border-radius: 7px;
+}
+
+.searchBarSubmit:hover {
+    transition: 0.12s;
+    background-color: rgb(255, 134, 134); 
 }
 
 /*Navbar*/
@@ -134,7 +140,7 @@ body {
 
 .navbarButtonTwo:hover {
     transition: 0.12s;
-    color: rgb(219, 110, 110);
+    color: rgb(218, 86, 86);
 }
 
 /*Login and Sign Up*/
@@ -306,26 +312,6 @@ body {
     background-color: rgb(255, 134, 134); 
 }
 
-.editPost {
-    float: right;
-    transition: 0.12s;
-    background-color: rgb(219, 110, 110); 
-    border: none;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    border-radius: 5px;
-    margin-right: 5px;
-}
-
-.editPost:hover {
-    transition: 0.12s;
-    background-color: rgb(255, 134, 134); 
-}
-
-
 /*Create Post*/
 
 .inputPost {
@@ -376,3 +362,28 @@ body {
     transition: 0.12s;
     background-color: rgb(255, 134, 134); 
 }
+
+.snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+.snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+  

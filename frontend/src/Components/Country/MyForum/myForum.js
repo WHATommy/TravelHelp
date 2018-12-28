@@ -20,6 +20,7 @@ class MyPosts extends Component {
         return JSON.stringify(a) === JSON.stringify(b);
     }
 
+
     componentDidMount() {
         axios
             .get('http://localhost:5000/api/posts/')
@@ -40,6 +41,7 @@ class MyPosts extends Component {
                 }
             })
     }
+
 
     render() {
         return (

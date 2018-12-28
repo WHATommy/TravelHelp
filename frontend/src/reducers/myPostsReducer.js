@@ -1,4 +1,4 @@
-import { GET_MYPOST_INFO } from '../actions/types'
+import { GET_MYPOST_INFO, DELETE_MYPOST_INFO } from '../actions/types'
 
 const initialState = {
     myPost: '',
@@ -12,6 +12,11 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 myPost: action.payload
+            }
+        case DELETE_MYPOST_INFO:
+            return {
+                ...state,
+                myPost: state.posts.filter(post => post._id !== action.payload)
             }
         default:
             return state;

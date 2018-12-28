@@ -1,5 +1,9 @@
 import { GET_COUNTRY_INFO, GET_ERRORS } from './types'
 import axios from 'axios';
+import setAuthToken from '../utils/setAuthToken';
+import store from '../store'
+import jwt_decode from 'jwt-decode'
+import { setCurrentUser } from '../actions/authAction'
 
 //Get country info from API
 export const getCountry = (country) => dispatch => {
@@ -18,6 +22,14 @@ export const getCountry = (country) => dispatch => {
                     language: stat.languages[0].name
                 }
             });
+            if (localStorage.jwtToken) {
+                // Set auth token header auth
+                setAuthToken(localStorage.jwtToken)
+                // Decode token and get user info
+                const decoded = jwt_decode(localStorage.jwtToken)
+                // Set user and isAuthenticated
+                store.dispatch(setCurrentUser(decoded));
+            }
             dispatch({
                 type: GET_COUNTRY_INFO,
                 payload: items

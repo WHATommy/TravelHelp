@@ -21,13 +21,11 @@ class SelectList extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state)
     const post = {
       title: this.state.title,
       country: this.state.country,
       text: this.state.text
     }
-    console.log(post)
     this.props.createPost(post)
   }
 

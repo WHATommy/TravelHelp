@@ -10,9 +10,17 @@ const country = require('./routes/api/country')
 
 const app = express();
 
+//SUPER BUFF CORS FUNCTION
 app.use(function (req, res, next) {
   var allowedOrigins = "http://localhost:3000" || "http://restcountries.eu/rest/v2/";
-  var origin = req.headers.origin; if (allowedOrigins.indexOf(origin) > -1) { res.setHeader('Access-Control-Allow-Origin', origin); } res.header('Access-Control-Allow-Methods', 'GET, POST'); res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization'); res.header('Access-Control-Allow-Credentials', true); return next();
+  var origin = req.headers.origin;
+  if (allowedOrigins.indexOf(origin) > -1) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.header('Access-Control-Allow-Methods', 'GET, POST, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', true);
+  return next();
 });
 
 
