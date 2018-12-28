@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
-import { createPost } from '../../actions/postAction'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { createPost } from '../../actions/postAction';
 
 class SelectList extends Component {
   constructor(props) {
@@ -248,8 +248,9 @@ class SelectList extends Component {
 
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="form align">
         <input
+          className="inputPost"
           type="text"
           placeholder="Title"
           name="title"
@@ -257,20 +258,24 @@ class SelectList extends Component {
           onChange={this.onChange}
         />
         <select
+          className="inputPost"
           name='country'
           value={this.state.value}
           onChange={this.onChange}
         >
           {selectOptions}
         </select>
-        <input
-          type="text"
+        <textarea
+          className="inputContent"
+          type="textarea"
           placeholder="Content"
           name="text"
           value={this.state.username}
           onChange={this.onChange}
         />
-        <input type="submit" value="Submit" />
+        <div className="line">
+          <input type="submit" value="Create" className="submitPost" />
+        </div>
       </form>
     );
   }

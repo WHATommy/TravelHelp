@@ -52,10 +52,11 @@ class Register extends Component {
         const { errors } = this.state;
 
         return (
-            <div>
-                <form onSubmit={this.onSubmit}>
+            <div className="align">
+                <form onSubmit={this.onSubmit} className="form">
                     <div>
                         <input
+                            className="input"
                             type="text"
                             placeholder="Username"
                             name="username"
@@ -65,6 +66,7 @@ class Register extends Component {
                     </div>
                     <div>
                         <input
+                            className="input"
                             type="email"
                             placeholder="Email Address"
                             name="email"
@@ -74,6 +76,7 @@ class Register extends Component {
                     </div>
                     <div>
                         <input
+                            className="input"
                             type="password"
                             placeholder="Password"
                             name="password"
@@ -83,15 +86,19 @@ class Register extends Component {
                     </div>
                     <div>
                         <input
+                            className="input"
                             type="password"
-                            placeholder="Password"
+                            placeholder="Confirm Password"
                             name="password2"
                             value={this.state.password2}
                             onChange={this.onChange}
                         />
 
                     </div>
-                    <input type="submit" />
+                    <div className="line">
+                        <input type="submit" value="Register" className="submit" />
+                    </div>
+
                 </form>
 
             </div>

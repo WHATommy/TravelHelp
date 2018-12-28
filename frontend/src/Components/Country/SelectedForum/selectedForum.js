@@ -30,7 +30,7 @@ class SelectedForum extends Component {
 
     render() {
         return (
-            <div>
+            <div className="postSpace" >
                 <Forums
                     forums={this.state.posts}
                 />

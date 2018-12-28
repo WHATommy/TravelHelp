@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { logoutUser } from '../../actions/authAction'
+import { logoutUser } from '../../actions/authAction';
 
 
 class Navbar extends Component {
@@ -15,29 +15,34 @@ class Navbar extends Component {
         const { isAuthenticated, user } = this.props.auth;
         const authLinks = (
             <>
-                <a href="" onClick={this.onLogoutClick.bind(this)}>Logout</a>
-                <Link to='/createForum'>Post</Link>
+                <Link to='/createForum' className="navbarButtonTwo">Create</Link>
+                <Link to='/myForum' className="navbarButtonOne">My Posts</Link>
+                <a href="" onClick={this.onLogoutClick.bind(this)} className="navbarButtonOne">Logout</a>
             </>
         );
 
         const guestLinks = (
             <>
-                <Link to='/register'>Sign Up</Link>
-                <Link to='/login'>Login</Link>
+                <Link to='/register' className="navbarButtonTwo">Sign Up</Link>
+                <Link to='/login' className="navbarButtonOne">Login</Link>
             </>
         );
 
         return (
-            <div>
-                <Link to='/'>TravelTips</Link>
-                <Link to='/CountryForum'>Country</Link>
-                {isAuthenticated ? authLinks : guestLinks}
+            <div className="navbar">
+                <div className="navbarLeft">
+                    <Link to='/' className="navbarLogo">Travel Help</Link>
+                </div>
+                <div className="navbarRight">
+                    {isAuthenticated ? authLinks : guestLinks}
+                </div>
             </div>
         )
     }
 }
 
 Navbar.propTypes = {
+    //getMyPost: PropTypes.func.isRequired,
     logoutUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 }
@@ -47,4 +52,4 @@ const mapStateToProps = (state) => ({
 
 })
 
-export default connect(mapStateToProps, { logoutUser })(Navbar)
+export default connect(mapStateToProps, { logoutUser /*getMyPost*/ })(Navbar)

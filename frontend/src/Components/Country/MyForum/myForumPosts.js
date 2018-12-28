@@ -1,11 +1,11 @@
 import React from 'react'
-import Forum from './forum/forum'
+import MyForumPost from './MyForumPost'
 
-const Forums = (props) => {
+const MyForumPosts = (props) => {
     return (
-        <div className="posts">
-            {props.forums.map(stat =>
-                <Forum
+        <div className="postSpace">
+            {props.myPosts.map(stat =>
+                <MyForumPost
                     id={stat.id}
                     title={stat.title}
                     country={stat.country}
@@ -18,5 +18,4 @@ const Forums = (props) => {
 
 }
 
-export default Forums
-
+export default MyForumPosts

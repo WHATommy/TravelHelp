@@ -20,7 +20,6 @@ class Search extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        //this.props.onCountryChange(this.state.value);
         const country = this.state.value
         this.props.getCountry(country)
         this.props.getPost(country)
@@ -28,9 +27,9 @@ class Search extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input value={this.state.value} type="text" name="country" placeholder="Country..." onChange={this.handleChange} />
-                <input type="submit" value="Submit" />
+            <form onSubmit={this.handleSubmit} className="searchForm align">
+                <input value={this.state.value} type="text" name="country" placeholder="Country..." onChange={this.handleChange} className="input" />
+                <input type="submit" value="Submit" className="submit" />
             </form>
         )
     }

@@ -21,7 +21,7 @@ class CountryForum extends Component {
   render() {
     const country = this.state.currentCountry;
     return (
-      <div className="App">
+      <div>
         <Search value={country}
           onCountryChange={this.handleCountryChange} />
 

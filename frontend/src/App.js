@@ -13,6 +13,7 @@ import Landing from './Components/layout/landing'
 import Navbar from './Components/layout/navbar'
 import CountryForum from './Components/Country/CountryForum';
 import CreateForum from './Components/Country/CreateForum/createForum'
+import myForum from './Components/Country/MyForum/myForum'
 
 import './App.css';
 
@@ -47,6 +48,7 @@ class App extends PureComponent {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path='/createForum' component={CreateForum} />
+              <Route exact path='/myForum' component={myForum} />
             </div>
           </div>
         </Router>
@@ -56,6 +58,7 @@ class App extends PureComponent {
 
 }
 
+//<Route exact path='/myForum' component={myForum} />
 
 
 export default App

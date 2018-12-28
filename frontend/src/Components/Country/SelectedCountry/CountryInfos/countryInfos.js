@@ -3,7 +3,7 @@ import CountryInfo from './CountryInfo/CountryInfo'
 
 const CountryInfos = (props) => {
     return (
-        <div>
+        <div className="infos">
             {props.countryInfos.map(stat =>
                 <CountryInfo
                     name={stat.name}

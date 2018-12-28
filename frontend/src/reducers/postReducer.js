@@ -1,8 +1,9 @@
-import { GET_POSTS_INFO, CREATE_POST_INFO } from '../actions/types'
+import { GET_POSTS_INFO, CREATE_POST_INFO, GET_MYPOST_INFO } from '../actions/types'
 
 const initialState = {
     postInfos: '',
     post: {},
+    myPost: '',
     errors: {}
 }
 

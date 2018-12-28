@@ -1,32 +1,378 @@
-.App {
-  text-align: center;
+/*General*/
+
+* {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+    /*background: url("Background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;*/
+    background-color: rgb(238, 216, 210);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*Landing*/
+
+.landingInfo {
+    color: white;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    border-bottom: 2px solid white;
+    text-shadow: 7px 7px 35px  #979797;
+
 }
 
-.App-link {
-  color: #61dafb;
+.landing h1 {
+    font-family: 'Muli';
+    font-size: 95px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.landing p {
+    font-family: 'Muli';
+    font-size: 25px;
+}
+
+.searchBar {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 40px;
+}
+
+.searchBarInput {
+    font-family: 'Muli';
+    margin: 5px;
+    border: none;
+    padding: 15px;
+    width: 70%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 7px;
+}
+
+.searchBarSubmit {
+    font-family: 'Muli';
+    font-weight: bold;
+    margin: 5px;
+    background-color: rgb(219, 110, 110); 
+    border: none;
+    color: white;
+    padding: 15px;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 7px;
+}
+
+/*Navbar*/
+.navbar {
+    font-family: 'Muli';
+    width: 100%;
+    height: 60px;
+    display: inline-block;
+    background-color:white;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.navbarLeft {
+    float: left;
+    height: 60px;
+    margin-left: 10px;
+}
+
+.navbarRight {
+    float: right;
+    height: 60px;
+}
+
+.navbarLogo {
+    transition: 0.12s;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 8px;
+    padding: 11px;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+
+.navbarLogo:hover {
+    transition: 0.12s;
+    color: rgb(218, 86, 86);
+    border: 1px solid rgb(218, 86, 86);
+}
+
+.navbarButtonOne {
+    transition: 0.12s;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 8px;
+    padding: 11px;
+    border-left: 1px solid black;
+}
+
+.navbarButtonOne:hover {
+    transition: 0.12s;
+    color: rgb(218, 86, 86);
+}
+
+.navbarButtonTwo {
+    transition: 0.12s;
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 8px;
+    padding: 11px;
+}
+
+.navbarButtonTwo:hover {
+    transition: 0.12s;
+    color: rgb(219, 110, 110);
+}
+
+/*Login and Sign Up*/
+
+.align {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+.form {
+    margin-top: 50px;
+    background-color: white;
+    padding: 35px;
+    border-radius: 10px;
+}
+
+.input {
+    font-family: 'Muli';
+    margin: 10px;
+    border: none;
+    padding: 15px;
+    width: 70%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 7px;
+}
+
+.submit {
+    transition: 0.12s;
+    font-family: 'Muli';
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: rgb(219, 110, 110); 
+    border: none;
+    color: white;
+    padding: 15px;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 7px;
+}
+
+.submit:hover {
+    transition: 0.12s;
+    background-color: rgb(255, 134, 134); 
+}
+
+.line {
+    margin-top: 20px;
+    width: 100%;
+    border-top: 1px solid rgb(180, 180, 180);
+
+}
+
+/*Country Forum*/
+.searchForm {
+    margin-top: 50px;
+    padding: 35px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.postSpace {
+    margin: auto;
+    width: 50%;
+}
+
+.postSpace p {
+    font-family: 'lato';
+}
+
+.postSpace h1 {
+    text-align: center;
+    font-family: 'Muli';
+    border-bottom: 1px solid rgb(180, 180, 180);
+    padding-bottom: 15px;
+    width: 70%;
+    margin: auto;
+}
+
+.post {
+    background-color: white;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 7px;
+    margin: 20px;
+    padding: 15px;
+}
+
+.postInfo {
+    text-align: center;
+}
+
+.pCountry {
+    display: inline-block;
+    margin: 30px;
+}
+
+.pUser {
+    display: inline-block;
+    margin: 30px;
+}
+
+.pDate {
+    display: inline-block;
+    margin: 30px;
+}
+
+.postContent {
+    border-top: 1px solid rgb(180, 180, 180);
+    padding-bottom: 15px;
+    width: 90%;
+    margin: auto;
+}
+
+.infoSpace {
+    margin: auto;
+    width: 60%;
+}
+
+.infoSpace p {
+    font-family: 'lato';
+}
+
+.infoSpace h1 {
+    text-align: center;
+    font-family: 'Muli';
+}
+
+.infoSpace h2 {
+    text-align: center;
+    font-family: 'Muli';
+    border-bottom: 1px solid rgb(180, 180, 180);
+    padding-bottom: 25px;
+    width: 70%;
+    margin: auto;
+}
+
+.info {
+    background-color: white;
+    border: 1px solid rgb(180, 180, 180);
+    margin: 20px;
+    padding: 15px;
+}
+
+.information {
+    margin: auto;
+    width: 70%;
+}
+
+.deletePost {
+    float: right;
+    transition: 0.12s;
+    background-color: rgb(219, 110, 110); 
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.deletePost:hover {
+    transition: 0.12s;
+    background-color: rgb(255, 134, 134); 
+}
+
+.editPost {
+    float: right;
+    transition: 0.12s;
+    background-color: rgb(219, 110, 110); 
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.editPost:hover {
+    transition: 0.12s;
+    background-color: rgb(255, 134, 134); 
+}
+
+
+/*Create Post*/
+
+.inputPost {
+    font-family: 'Muli';
+    margin: 10px;
+    border: none;
+    padding: 15px;
+    width: 80%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 7px;
+}
+
+.inputContent {
+    font-family: 'Muli';
+    margin: 10px;
+    border: none;
+    padding: 15px;
+    width: 80%;
+    height: 150px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 7px;
+}
+
+.submitPost {
+    transition: 0.12s;
+    font-family: 'Muli';
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: rgb(219, 110, 110); 
+    border: none;
+    color: white;
+    padding: 15px;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 7px;
+}
+
+.submitPost:hover {
+    transition: 0.12s;
+    background-color: rgb(255, 134, 134); 
 }

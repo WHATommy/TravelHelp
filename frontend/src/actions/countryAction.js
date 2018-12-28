@@ -3,8 +3,9 @@ import axios from 'axios';
 
 //Get country info from API
 export const getCountry = (country) => dispatch => {
+    delete axios.defaults.headers.common["Authorization"];
     axios
-        .get(`http://restcountries.eu/rest/v2/name/${country}?fullText=true`)
+        .get(`http://restcountries.eu/rest/v2/name/${country}`)
         .then(res => {
             const items = res.data.map(stat => {
                 return {

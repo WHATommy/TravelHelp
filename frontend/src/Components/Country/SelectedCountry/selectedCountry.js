@@ -30,7 +30,7 @@ class SelectedCountry extends Component {
 
     render() {
         return (
-            <div>
+            <div className="infoSpace">
                 <CountryInfos
                     countryInfos={this.state.items}
                 />

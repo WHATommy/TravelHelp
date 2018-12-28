@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Forum = (props) => {
+const MyForumPost = (props) => {
     return (
         <div className="post">
+            <button className="deletePost fas fa-trash"></button>
+            <button className="editPost fas fa-pen"></button>
             <h1>{props.title}</h1>
             <div className="postInfo">
                 <p class="pCountry">Country: {props.country}</p>
@@ -17,4 +19,4 @@ const Forum = (props) => {
 }
 
 
-export default Forum
+export default MyForumPost

@@ -9,20 +9,21 @@ const Post = require('../../models/Post');
 // Validation
 const validatePostInput = require('../../validation/post');
 
-// @route   GET api/posts/test
-// @desc    Tests post route
-// @access  Public
-router.get('/test', (req, res) => res.json({ msg: 'Posts Works' }));
-
 // @route   GET api/posts
 // @desc    Get posts
 // @access  Public
-router.get('/', (req, res) => {
+router.get('/all', (req, res) => {
   Post.find()
     .sort({ date: -1 })
     .then(posts => res.json(posts))
     .catch(err => res.status(404).json({ nopostsfound: 'No posts found' }));
 });
+
+router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
+  console.log(req.user.id)
+  Post.find({ user: req.user.id })
+    .then(post => res.json(post))
+})
 
 //@route   GET api/posts
 //@desc    Get posts
@@ -73,7 +74,6 @@ router.post(
       // If any errors, send 400 with errors object
       return res.status(400).json(errors);
     }
-
     const newPost = new Post({
       title: req.body.title,
       text: req.body.text,

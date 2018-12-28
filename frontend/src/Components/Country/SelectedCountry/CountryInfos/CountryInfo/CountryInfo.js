@@ -2,15 +2,17 @@ import React from 'react'
 
 const CountryInfo = (props) => {
     return (
-        <>
-            <h1>{props.name}</h1>
-            <p>{props.capital}</p>
-            <p>{props.region}</p>
-            <p>{props.population}</p>
-            <p>{props.currencyName}</p>
-            <p>{props.currencySymbol}</p>
-            <p>{props.language}</p>
-        </>
+        <div className="info">
+            <h1>GENERAL INFORMATION:</h1>
+            <h2>{props.name}</h2>
+            <div className="information">
+                <p>Capital: {props.capital}</p>
+                <p>Region: {props.region}</p>
+                <p>Propulation: {props.population}</p>
+                <p>Currency: {props.currencyName}({props.currencySymbol})</p>
+                <p>Language: {props.language}</p>
+            </div>
+        </div>
     )
 }
 
