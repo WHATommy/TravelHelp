@@ -20,6 +20,7 @@ class MyPosts extends Component {
     }
 
     componentDidUpdate() {
+        this.props.getMyPost();
         const myPost = this.props.myPost.myPost
         if (!this.jsonEqual(myPost, this.state.myPosts)) {
             this.setState({ myPosts: myPost });

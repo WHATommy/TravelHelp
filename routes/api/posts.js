@@ -20,7 +20,6 @@ router.get('/all', (req, res) => {
 });
 
 router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => {
-  console.log(req.user.id)
   Post.find({ user: req.user.id })
     .then(post => res.json(post))
 })
