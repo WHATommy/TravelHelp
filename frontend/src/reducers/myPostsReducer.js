@@ -1,7 +1,7 @@
 import { GET_MYPOST_INFO, DELETE_MYPOST_INFO } from '../actions/types'
 
 const initialState = {
-    myPost: '',
+    myPost: [],
     errors: {}
 }
 
@@ -16,7 +16,7 @@ export default function (state = initialState, action) {
         case DELETE_MYPOST_INFO:
             return {
                 ...state,
-                myPost: state.posts.filter(post => post._id !== action.payload)
+                myPost: state.myPost.filter(post => post._id !== action.payload)
             }
         default:
             return state;

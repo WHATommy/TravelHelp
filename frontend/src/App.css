@@ -43,8 +43,7 @@ body {
 
 .searchBarInput {
     font-family: 'Muli';
-    margin: 5px;
-    border: none;
+    margin-bottom: 10px;
     padding: 15px;
     width: 70%;
     text-decoration: none;
@@ -55,7 +54,7 @@ body {
 }
 
 .searchBarSubmit {
-    transition: 0.12s;
+    transition: 0.1s;
     font-family: 'Muli';
     font-weight: bold;
     margin: 5px;
@@ -72,7 +71,7 @@ body {
 }
 
 .searchBarSubmit:hover {
-    transition: 0.12s;
+    transition: 0.1s;
     background-color: rgb(255, 134, 134); 
 }
 
@@ -98,7 +97,7 @@ body {
 }
 
 .navbarLogo {
-    transition: 0.12s;
+    transition: 0.1s;
     color: black;
     display: inline-block;
     text-decoration: none;
@@ -109,13 +108,13 @@ body {
 }
 
 .navbarLogo:hover {
-    transition: 0.12s;
+    transition: 0.1s;
     color: rgb(218, 86, 86);
     border: 1px solid rgb(218, 86, 86);
 }
 
 .navbarButtonOne {
-    transition: 0.12s;
+    transition: 0.1s;
     color: black;
     display: inline-block;
     text-decoration: none;
@@ -125,12 +124,12 @@ body {
 }
 
 .navbarButtonOne:hover {
-    transition: 0.12s;
+    transition: 0.1s;
     color: rgb(218, 86, 86);
 }
 
 .navbarButtonTwo {
-    transition: 0.12s;
+    transition: 0.1s;
     color: black;
     display: inline-block;
     text-decoration: none;
@@ -139,7 +138,7 @@ body {
 }
 
 .navbarButtonTwo:hover {
-    transition: 0.12s;
+    transition: 0.1s;
     color: rgb(218, 86, 86);
 }
 
@@ -160,7 +159,7 @@ body {
 
 .input {
     font-family: 'Muli';
-    margin: 10px;
+    margin-bottom: 10px;
     border: none;
     padding: 15px;
     width: 70%;
@@ -172,7 +171,7 @@ body {
 }
 
 .submit {
-    transition: 0.12s;
+    transition: 0.1s;
     font-family: 'Muli';
     font-weight: bold;
     margin-top: 20px;
@@ -186,10 +185,11 @@ body {
     display: inline-block;
     font-size: 16px;
     border-radius: 7px;
+    margin: 10px;
 }
 
 .submit:hover {
-    transition: 0.12s;
+    transition: 0.1s;
     background-color: rgb(255, 134, 134); 
 }
 
@@ -226,7 +226,7 @@ body {
 }
 
 .post {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border: 1px solid rgb(180, 180, 180);
     border-radius: 7px;
     margin: 20px;
@@ -296,7 +296,7 @@ body {
 
 .deletePost {
     float: right;
-    transition: 0.12s;
+    transition: 0.1s;
     background-color: rgb(219, 110, 110); 
     border: none;
     color: white;
@@ -308,7 +308,7 @@ body {
 }
 
 .deletePost:hover {
-    transition: 0.12s;
+    transition: 0.1s;
     background-color: rgb(255, 134, 134); 
 }
 
@@ -342,7 +342,7 @@ body {
 }
 
 .submitPost {
-    transition: 0.12s;
+    transition: 0.1s;
     font-family: 'Muli';
     font-weight: bold;
     margin-top: 20px;
@@ -359,7 +359,7 @@ body {
 }
 
 .submitPost:hover {
-    transition: 0.12s;
+    transition: 0.1s;
     background-color: rgb(255, 134, 134); 
 }
 
@@ -386,4 +386,214 @@ body {
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
+
+@media only screen and (max-width: 1200px) {
+
+    .navbarButtonOne {
+        font-size: 15px;
+    }
+
+    .navbarButtonTwo {
+        font-size: 15px;
+    }
+
+    .navbarLogo {
+        font-size: 15px;
+    }
+
+    .landing h1 {
+        font-family: 'Muli';
+        font-size: 55px;
+    }
+    
+    .landing p {
+        font-family: 'Muli';
+        font-size: 20px;
+    }
+
+    .searchBar {
+        width: 70%;
+    }
+
+    .searchBarInput {
+        width: 100%; 
+        display: block;
+    }
+
+    .searchBarSubmit {
+        width: 50%;
+        display: block;
+        margin: auto;
+    }
+
+    .align {
+        width: 70%;
+    }
+
+    .form {
+        margin-top: 50px;
+        background-color: white;
+        padding: 35px;
+        border-radius: 10px;
+    }
+
+    .input {
+        width: 100%; 
+        display: block;
+    }
+
+    .postSpace {
+        width: 80%;
+    }
+    
+    .post h1 {
+        font-size: 20px;
+    }
+
+    .post p {
+        font-size: 14px;
+    }
+
+    .pCountry {
+        display: block;
+    }
+    
+    .pUser {
+        display: block;
+    }
+    
+    .pDate {
+        display: block;
+    }
+
+    .submit {
+        width: 50%;
+        display: block;
+        margin: auto;
+    }
+
+    .infoSpace {
+        width: 80%;
+    }
+
+    .infoSpace p {
+        font-size: 14px;
+    }
+    
+    .infoSpace h1 {
+        font-size: 20px;
+    }
+    
+    .infoSpace h2 {
+        font-size: 17px;
+    }
+
+    .inputPost {
+        width: 90%;
+        font-size: 14px;
+    }
+    
+    .inputContent {
+        width: 90%;
+        font-size: 14px;
+    }
+    
+    .submitPost {
+        width: 50%;
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+    }
+
+    .deletePost {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .navbarButtonOne {
+        font-size: 13px;
+    }
+
+    .navbarButtonTwo {
+        font-size: 13px;
+    }
+
+    .navbarLogo {
+        font-size: 13px;
+    }
+
+    .searchBar {
+        width: 90%;
+    }
+    
+    .searchBarInput {
+        font-size: 12px;
+    }
+
+    .searchBarSubmit {
+        width: 100%;
+        font-size: 9px;
+    }
+
+    .input {
+        font-size: 12px;
+    }
+
+    .align {
+        width: 95%;
+    }
+
+    .postSpace {
+        width: 100%;
+    }
+
+    .post h1 {
+        font-size: 17px;
+    }
+
+    .post p {
+        font-size: 12px;
+    }
+
+    .pCountry {
+        font-size: 12px;
+    }
+    
+    .pUser {
+        font-size: 12px;
+    }
+    
+    .pDate {
+        font-size: 12px;
+    }
+    
+    .submit {
+        width: 100%;
+        font-size: 9px;
+    }
+
+    .infoSpace {
+        width: 100%;
+    }
+
+    .infoSpace p {
+        font-size: 12px;
+    }
+    
+    .infoSpace h1 {
+        font-size: 16px;
+    }
+    
+    .infoSpace h2 {
+        font-size: 14px;
+    }
+
+    .deletePost {
+        font-size: 14px;
+    }
+}
+
+
   

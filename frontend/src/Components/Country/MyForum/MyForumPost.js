@@ -1,5 +1,7 @@
 import React from 'react'
 import { deletePost } from '../../../actions/postAction'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const MyForumPost = (props) => {
     return (
@@ -18,5 +20,8 @@ const MyForumPost = (props) => {
     )
 }
 
+MyForumPost.propTypes = {
+    deletePost: PropTypes.func.isRequired
+}
 
-export default MyForumPost
+export default connect(null, { deletePost })(MyForumPost)

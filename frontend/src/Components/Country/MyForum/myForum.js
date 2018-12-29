@@ -10,8 +10,7 @@ class MyPosts extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            myPosts: [],
-            errors: {}
+            myPosts: []
         }
 
     }
@@ -20,26 +19,15 @@ class MyPosts extends Component {
         return JSON.stringify(a) === JSON.stringify(b);
     }
 
+    componentDidUpdate() {
+        const myPost = this.props.myPost.myPost
+        if (!this.jsonEqual(myPost, this.state.myPosts)) {
+            this.setState({ myPosts: myPost });
+        }
+    }
 
     componentDidMount() {
-        axios
-            .get('http://localhost:5000/api/posts/')
-            .then(res => {
-                console.log(res)
-                const myPosts = res.data.map(stat => {
-                    return {
-                        id: stat._id,
-                        title: stat.title,
-                        country: stat.country,
-                        user: stat.username,
-                        date: stat.date,
-                        text: stat.text
-                    }
-                })
-                if (!this.jsonEqual(myPosts, this.state.myPosts)) {
-                    this.setState({ myPosts });
-                }
-            })
+        this.props.getMyPost();
     }
 
 

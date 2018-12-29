@@ -61,6 +61,7 @@ export const deletePost = id => dispatch => {
         .delete(`http://localhost:5000/api/posts/${id}`)
         .then(res => {
             console.log(res);
+            console.log(dispatch);
             dispatch({
                 type: DELETE_MYPOST_INFO,
                 payload: id
@@ -74,11 +75,11 @@ export const deletePost = id => dispatch => {
             })
         })
 }
+
 export const getMyPost = () => dispatch => {
     axios
         .get('http://localhost:5000/api/posts/')
         .then(res => {
-            console.log(res)
             const myPosts = res.data.map(stat => {
                 return {
                     id: stat._id,
@@ -93,8 +94,6 @@ export const getMyPost = () => dispatch => {
                 type: GET_MYPOST_INFO,
                 payload: myPosts
             })
-            console.log(res)
-            console.log(myPosts)
         })
         .catch(err =>
             dispatch({
