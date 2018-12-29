@@ -55,6 +55,7 @@ class Register extends Component {
             <div className="align">
                 <form onSubmit={this.onSubmit} className="form">
                     <div>
+                        <div className="error">{errors.username}</div>
                         <input
                             className="input"
                             type="text"
@@ -65,6 +66,7 @@ class Register extends Component {
                         />
                     </div>
                     <div>
+                        <div className="error">{errors.email}</div>
                         <input
                             className="input"
                             type="email"
@@ -75,6 +77,7 @@ class Register extends Component {
                         />
                     </div>
                     <div>
+                        <div className="error">{errors.password}</div>
                         <input
                             className="input"
                             type="password"
@@ -85,6 +88,7 @@ class Register extends Component {
                         />
                     </div>
                     <div>
+                        <div className="error">{errors.password2}</div>
                         <input
                             className="input"
                             type="password"

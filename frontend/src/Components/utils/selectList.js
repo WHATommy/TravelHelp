@@ -9,7 +9,8 @@ class SelectList extends Component {
     this.state = {
       title: '',
       country: '',
-      text: ''
+      text: '',
+      errors: {}
     }
     this.onChange = this.onChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,7 +30,16 @@ class SelectList extends Component {
     this.props.createPost(post)
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors })
+    }
+  }
+
   render() {
+
+    const { errors } = this.state;
+
     const options = [
       { label: "Afghanistan", value: "Afghanistan" },
       { label: "Albania", value: "Albania" },
@@ -247,6 +257,7 @@ class SelectList extends Component {
 
     return (
       <form onSubmit={this.handleSubmit} className="form align">
+        <div className="errorPost">{errors.title}</div>
         <input
           className="inputPost"
           type="text"
@@ -255,6 +266,7 @@ class SelectList extends Component {
           value={this.state.username}
           onChange={this.onChange}
         />
+        <div className="errorPost">{errors.country}</div>
         <select
           className="inputPost"
           name='country'
@@ -263,6 +275,7 @@ class SelectList extends Component {
         >
           {selectOptions}
         </select>
+        <div className="errorPost">{errors.text}</div>
         <textarea
           className="inputContent"
           type="textarea"
@@ -281,7 +294,14 @@ class SelectList extends Component {
 };
 
 SelectList.propTypes = {
-  createPost: PropTypes.func.isRequired
+  createPost: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
 }
 
-export default connect(null, { createPost })(SelectList)
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+
+export default connect(mapStateToProps, { createPost })(SelectList)

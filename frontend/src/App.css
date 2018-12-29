@@ -9,7 +9,7 @@ body {
     background-size: cover;
     height: 100%;
     overflow: hidden;*/
-    background-color: rgb(225, 238, 243);
+    background-color: rgb(241, 241, 241);
 }
 
 /*Landing*/
@@ -72,7 +72,7 @@ body {
 
 .searchBarSubmit:hover {
     transition: 0.1s;
-    background-color: rgb(255, 134, 134); 
+    background-color: rgb(255, 166, 166); 
 }
 
 /*Navbar*/
@@ -185,12 +185,13 @@ body {
     display: inline-block;
     font-size: 16px;
     border-radius: 7px;
-    margin: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .submit:hover {
     transition: 0.1s;
-    background-color: rgb(255, 134, 134); 
+    background-color: rgb(255, 166, 166);  
 }
 
 .line {
@@ -198,6 +199,13 @@ body {
     width: 100%;
     border-top: 1px solid rgb(180, 180, 180);
 
+}
+
+.error {
+    color: rgb(255, 73, 73);
+    text-align: left;
+    width: 70%;
+    margin: auto;
 }
 
 /*Country Forum*/
@@ -309,7 +317,7 @@ body {
 
 .deletePost:hover {
     transition: 0.1s;
-    background-color: rgb(255, 134, 134); 
+    background-color: rgb(255, 166, 166);  
 }
 
 /*Create Post*/
@@ -360,7 +368,14 @@ body {
 
 .submitPost:hover {
     transition: 0.1s;
-    background-color: rgb(255, 134, 134); 
+    background-color:rgb(255, 166, 166); 
+}
+
+.errorPost {
+    color: rgb(255, 73, 73);
+    text-align: left;
+    width: 80%;
+    margin: auto;
 }
 
 .snackbar {
@@ -388,6 +403,15 @@ body {
 }
 
 @media only screen and (max-width: 1200px) {
+
+    .error {
+        width: 100%;
+    }
+
+    .errorPost {
+        width: 90%;
+    }
+    
 
     .navbarButtonOne {
         font-size: 15px;
@@ -470,6 +494,7 @@ body {
         width: 50%;
         display: block;
         margin: auto;
+        margin-top: 10px;
     }
 
     .infoSpace {
@@ -511,6 +536,8 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
+
+  
 
     .navbarButtonOne {
         font-size: 13px;

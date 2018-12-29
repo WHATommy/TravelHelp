@@ -9,6 +9,7 @@ class Navbar extends Component {
     onLogoutClick(event) {
         event.preventDefault();
         this.props.logoutUser();
+        window.location = "/login"
     }
 
     render() {

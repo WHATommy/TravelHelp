@@ -57,23 +57,25 @@ export const createPost = (posts) => dispatch => {
 }
 
 export const deletePost = id => dispatch => {
-    axios
-        .delete(`http://localhost:5000/api/posts/${id}`)
-        .then(res => {
-            console.log(res);
-            console.log(dispatch);
-            dispatch({
-                type: DELETE_MYPOST_INFO,
-                payload: id
+    if (window.confirm('Remove this post?')) {
+        axios
+            .delete(`http://localhost:5000/api/posts/${id}`)
+            .then(res => {
+                console.log(res);
+                console.log(dispatch);
+                dispatch({
+                    type: DELETE_MYPOST_INFO,
+                    payload: id
+                })
             })
-        })
-        .catch(err => {
-            console.log(err)
-            dispatch({
-                type: GET_ERRORS,
-                payload: err.response.data
+            .catch(err => {
+                console.log(err)
+                dispatch({
+                    type: GET_ERRORS,
+                    payload: err.response.data
+                })
             })
-        })
+    }
 }
 
 export const getMyPost = () => dispatch => {

@@ -29,6 +29,7 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
 //@desc    Get posts
 //@access  Public
 router.get('/select', (req, res, next) => {
+
   const { selectedCountry } = req.query;
   let targetedCountry = {}
   if (selectedCountry) {
@@ -44,6 +45,7 @@ router.get('/select', (req, res, next) => {
     .catch(error => {
       if (error) {
         res.status(500).json(error);
+        console.log(error)
       } else {
         next();
       }
