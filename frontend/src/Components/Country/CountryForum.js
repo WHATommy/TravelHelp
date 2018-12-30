@@ -11,7 +11,6 @@ class CountryForum extends Component {
     this.state = {
       currentCountry: ''
     }
-
   }
 
   handleCountryChange(country) {

@@ -16,7 +16,8 @@ export const getPost = (post) => dispatch => {
                     country: stat.country,
                     user: stat.username,
                     date: stat.date,
-                    text: stat.text
+                    text: stat.text,
+                    likes: stat.likes
                 }
             })
             if (localStorage.jwtToken) {
@@ -97,6 +98,30 @@ export const getMyPost = () => dispatch => {
                 payload: myPosts
             })
         })
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        )
+}
+
+export const likePost = id => dispatch => {
+    axios
+        .post(`http://localhost:5000/api/posts/like/${id}`)
+        .then(res => dispatch(getPost(res.data.country)))
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        )
+}
+
+export const unlikePost = id => dispatch => {
+    axios
+        .post(`http://localhost:5000/api/posts/unlike/${id}`)
+        .then(res => dispatch(getPost(res.data.country)))
         .catch(err =>
             dispatch({
                 type: GET_ERRORS,

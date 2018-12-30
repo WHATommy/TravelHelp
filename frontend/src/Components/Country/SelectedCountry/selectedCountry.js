@@ -24,7 +24,6 @@ class SelectedCountry extends Component {
         if (!this.jsonEqual(items, this.state.items)) {
             this.setState({ items });
         }
-        //this.setState({ items: this.props.countryInfos.countryInfos[0] })
     }
 
 

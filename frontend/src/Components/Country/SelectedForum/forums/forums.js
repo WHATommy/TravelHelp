@@ -12,6 +12,7 @@ const Forums = (props) => {
                     user={stat.user}
                     date={stat.date}
                     text={stat.text}
+                    likes={stat.likes}
                 />)}
         </div>
     )

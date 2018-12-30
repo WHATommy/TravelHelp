@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Forums from './forums/forums'
-import { connect } from 'react-redux'
+import Forums from './forums/forums';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { getPost } from '../../../actions/postAction'
 
 class SelectedForum extends Component {
     constructor(props) {
@@ -20,6 +21,7 @@ class SelectedForum extends Component {
     //TODO FIX LOOP
     componentDidUpdate() {
         const posts = this.props.postInfos.postInfos
+        console.log('--------------------------');
         if (!this.jsonEqual(posts, this.state.posts)) {
             this.setState({ posts });
         }
@@ -40,7 +42,8 @@ class SelectedForum extends Component {
 
 SelectedForum.propTypes = {
     postInfos: PropTypes.object.isRequired,
-    errors: PropTypes.object.isRequired
+    errors: PropTypes.object.isRequired,
+    getPost: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -48,4 +51,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 })
 
-export default connect(mapStateToProps, {})(SelectedForum);
+export default connect(mapStateToProps, { getPost })(SelectedForum);

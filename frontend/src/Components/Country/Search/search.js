@@ -14,6 +14,10 @@ class Search extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    jsonEqual(a, b) {
+        return JSON.stringify(a) === JSON.stringify(b);
+    }
+
     handleChange(event) {
         this.setState({ value: event.target.value });
     }

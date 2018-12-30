@@ -37,7 +37,6 @@ class SelectList extends Component {
   }
 
   render() {
-
     const { errors } = this.state;
 
     const options = [
