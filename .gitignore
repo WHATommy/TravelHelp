@@ -40,4 +40,9 @@ Temporary Items
 # Ignore all local history of files
 .history
 
+# Ignore keys #
+/node_modules
+package-lock.json.
+/config/keys_dev.js
+
 # End of https://www.gitignore.io/api/macos,visualstudiocode
