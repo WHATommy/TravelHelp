@@ -5,7 +5,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     console.log(res)
     axios
-        .get(`http://restcountries.eu/rest/v2/`)
+        .get(`https://restcountries.eu/rest/v2/`)
         .then(info => {
             console.log(info)
             info.data.map(stat => {

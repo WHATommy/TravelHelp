@@ -12,7 +12,7 @@ const app = express();
 
 //SUPER BUFF CORS FUNCTION
 app.use(function (req, res, next) {
-  var allowedOrigins = "http://localhost:3000" || "http://restcountries.eu/rest/v2/";
+  var allowedOrigins = "https://localhost:3000" || "https://restcountries.eu/rest/v2/";
   var origin = req.headers.origin;
   if (allowedOrigins.indexOf(origin) > -1) {
     res.setHeader('Access-Control-Allow-Origin', origin);

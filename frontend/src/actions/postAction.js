@@ -7,7 +7,7 @@ import store from '../store'
 
 export const getPost = (post) => dispatch => {
     axios
-        .get(`http://localhost:5000/api/posts/select?selectedCountry=${post}`)
+        .get(`https://localhost:5000/api/posts/select?selectedCountry=${post}`)
         .then((res) => {
             const posts = res.data.map(stat => {
                 return {
@@ -44,7 +44,7 @@ export const getPost = (post) => dispatch => {
 export const createPost = (posts) => dispatch => {
     console.log(posts)
     axios
-        .post('http://localhost:5000/api/posts/', posts)
+        .post('https://localhost:5000/api/posts/', posts)
         .then(res => {
             console.log(res)
             alert('Successfully created!')
@@ -60,7 +60,7 @@ export const createPost = (posts) => dispatch => {
 export const deletePost = id => dispatch => {
     if (window.confirm('Remove this post?')) {
         axios
-            .delete(`http://localhost:5000/api/posts/${id}`)
+            .delete(`https://localhost:5000/api/posts/${id}`)
             .then(res => {
                 console.log(res);
                 console.log(dispatch);
@@ -81,7 +81,7 @@ export const deletePost = id => dispatch => {
 
 export const getMyPost = () => dispatch => {
     axios
-        .get('http://localhost:5000/api/posts/')
+        .get('https://localhost:5000/api/posts/')
         .then(res => {
             const myPosts = res.data.map(stat => {
                 return {
@@ -108,7 +108,7 @@ export const getMyPost = () => dispatch => {
 
 export const likePost = id => dispatch => {
     axios
-        .post(`http://localhost:5000/api/posts/like/${id}`)
+        .post(`s://localhost:5000/api/posts/like/${id}`)
         .then(res => dispatch(getPost(res.data.country)))
         .catch(err =>
             dispatch({
@@ -120,7 +120,7 @@ export const likePost = id => dispatch => {
 
 export const unlikePost = id => dispatch => {
     axios
-        .post(`http://localhost:5000/api/posts/unlike/${id}`)
+        .post(`https://localhost:5000/api/posts/unlike/${id}`)
         .then(res => dispatch(getPost(res.data.country)))
         .catch(err =>
             dispatch({
