@@ -6,7 +6,6 @@ const path = require('path')
 
 const users = require('./routes/api/users');
 const posts = require('./routes/api/posts');
-const country = require('./routes/api/country')
 
 const app = express();
 
