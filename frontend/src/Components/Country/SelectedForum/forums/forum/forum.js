@@ -20,12 +20,20 @@ class Forum extends Component {
 
     onLikeClick(id, event) {
         event.preventDefault();
-        this.props.likePost(id)
+        if (!auth) {
+            this.props.history.push('/login')
+        } else {
+            this.props.likePost(id)
+        }
     }
 
     onUnlikeClick(id, event) {
         event.preventDefault();
-        this.props.unlikePost(id)
+        if (!auth) {
+            this.props.history.push('/login')
+        } else {
+            this.props.unlikePost(id)
+        }
     }
 
     componentDidUpdate() {
