@@ -9,7 +9,7 @@ import { setCurrentUser } from '../actions/authAction'
 export const getCountry = (country) => dispatch => {
     delete axios.defaults.headers.common["Authorization"];
     axios
-        .get(`https://restcountries.eu/rest/v2/name/${country}?fullText=true`)
+        .get(`https://restcountries.eu/rest/v2/name/${country}`)
         .then(res => {
             const items = res.data.map(stat => {
                 return {

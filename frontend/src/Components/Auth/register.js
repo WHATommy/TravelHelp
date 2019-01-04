@@ -55,17 +55,6 @@ class Register extends Component {
             <div className="align">
                 <form onSubmit={this.onSubmit} className="form">
                     <div>
-                        <div className="error">{errors.username}</div>
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="Username"
-                            name="username"
-                            value={this.state.username}
-                            onChange={this.onChange}
-                        />
-                    </div>
-                    <div>
                         <div className="error">{errors.email}</div>
                         <input
                             className="input"
@@ -98,6 +87,17 @@ class Register extends Component {
                             onChange={this.onChange}
                         />
 
+                    </div>
+                    <div>
+                        <div className="error">{errors.username}</div>
+                        <input
+                            className="input"
+                            type="text"
+                            placeholder="Display name"
+                            name="username"
+                            value={this.state.username}
+                            onChange={this.onChange}
+                        />
                     </div>
                     <div className="line">
                         <input type="submit" value="Register" className="submit" />
