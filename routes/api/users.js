@@ -12,14 +12,14 @@ const validateLoginInput = require('../../validation/login');
 // Load User model
 const User = require('../../models/User');
 
-// @route   GET api/users/test
-// @desc    Tests users route
-// @access  Public
+//route   GET api/users/test
+//desc    Tests users route
+//access  Public
 router.get('/test', (req, res) => res.json({ msg: 'Users Works' }));
 
-// @route   GET api/users/register
-// @desc    Register user
-// @access  Public
+//route   GET api/users/register
+//desc    Register user
+//access  Public
 router.post('/register', (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -54,9 +54,9 @@ router.post('/register', (req, res) => {
   });
 });
 
-// @route   GET api/users/login
-// @desc    Login User / Returning JWT Token
-// @access  Public
+//route   GET api/users/login
+//desc    Login User / Returning JWT Token
+//access  Public
 router.post('/login', (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
@@ -103,9 +103,9 @@ router.post('/login', (req, res) => {
   });
 });
 
-// @route   GET api/users/current
-// @desc    Return current user
-// @access  Private
+//route   GET api/users/current
+//desc    Return current user
+//access  Private
 router.get(
   '/current',
   passport.authenticate('jwt', { session: false }),

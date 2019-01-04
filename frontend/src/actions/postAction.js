@@ -1,4 +1,4 @@
-import { GET_ERRORS, GET_POSTS_INFO, CREATE_POST_INFO, GET_MYPOST_INFO, DELETE_MYPOST_INFO } from './types'
+import { GET_ERRORS, GET_POSTS_INFO, GET_MYPOST_INFO, DELETE_MYPOST_INFO } from './types'
 import axios from 'axios';
 import setAuthToken from '../utils/setAuthToken'
 import { setCurrentUser } from '../actions/authAction'
@@ -106,6 +106,8 @@ export const getMyPost = () => dispatch => {
 }
 
 export const likePost = id => dispatch => {
+    console.log('likedAction')
+    console.log(id)
     axios
         .post(`/api/posts/like/${id}`)
         .then(res => dispatch(getPost(res.data.country)))
@@ -118,6 +120,8 @@ export const likePost = id => dispatch => {
 }
 
 export const unlikePost = id => dispatch => {
+    console.log('unlikedAction')
+    console.log(id)
     axios
         .post(`/api/posts/unlike/${id}`)
         .then(res => dispatch(getPost(res.data.country)))

@@ -9,9 +9,9 @@ const Post = require('../../models/Post');
 // Validation
 const validatePostInput = require('../../validation/post');
 
-// @route   GET api/posts
-// @desc    Get posts
-// @access  Public
+//route   GET api/posts
+//desc    Get posts
+//access  Public
 router.get('/all', (req, res) => {
   Post.find()
     .sort({ date: -1 })
@@ -24,9 +24,9 @@ router.get('/', passport.authenticate('jwt', { session: false }), (req, res) => 
     .then(post => res.json(post))
 })
 
-//@route   GET api/posts
-//@desc    Get posts
-//@access  Public
+//route   GET api/posts
+//desc    Get posts
+//access  Public
 router.get('/select', (req, res, next) => {
 
   const { selectedCountry } = req.query;
@@ -51,9 +51,9 @@ router.get('/select', (req, res, next) => {
     });
 });
 
-// @route   GET api/posts/:id
-// @desc    Get post by id
-// @access  Public
+//route   GET api/posts/:id
+//desc    Get post by id
+//access  Public
 router.get('/:id', (req, res) => {
   Post.findById(req.params.id)
     .then(post => res.json(post))
@@ -62,9 +62,9 @@ router.get('/:id', (req, res) => {
     );
 });
 
-// @route   POST api/posts
-// @desc    Create post
-// @access  Private
+//route   POST api/posts
+//desc    Create post
+//access  Private
 router.post(
   '/',
   passport.authenticate('jwt', { session: false }),
@@ -87,9 +87,9 @@ router.post(
   }
 );
 
-// @route   DELETE api/posts/:id
-// @desc    Delete post
-// @access  Private
+//route   DELETE api/posts/:id
+//desc    Delete post
+//access  Private
 router.delete(
   '/:id',
   passport.authenticate('jwt', { session: false }),
@@ -112,38 +112,42 @@ router.delete(
   }
 );
 
-// @route   POST api/posts/like/:id
-// @desc    Like post
-// @access  Private
+//route   POST api/posts/like/:id
+//desc    Like post
+//access  Private
 router.post(
   '/like/:id',
   passport.authenticate('jwt', { session: false }),
+
   (req, res) => {
-    User.findOne({ user: req.user.id }).then(user => {
-      Post.findById(req.params.id)
-        .then(post => {
-          if (
-            post.likes.filter(like => like.user.toString() === req.user.id)
-              .length > 0
-          ) {
-            return res
-              .status(400)
-              .json({ alreadyliked: 'You already liked this post' });
-          }
+    User.findOne({ user: req.user.id })
+      .then(user => {
+        Post.findById(req.params.id)
+          .then(post => {
+            if (
+              post.likes.filter(like => like.user.toString() === req.user.id)
+                .length > 0
+            ) {
+              return res
+                .status(400)
+                .json({ alreadyliked: 'You already liked this post' });
+            }
 
-          // Add user id to likes array
-          post.likes.unshift({ user: req.user.id });
+            // Add user id to likes array
+            post.likes.unshift({ user: req.user.id });
 
-          post.save().then(post => res.json(post));
-        })
-        .catch(err => res.status(404).json({ postnotfound: 'No post found' }));
-    });
+            post.save()
+              .then(post => res.json(post));
+          })
+          .catch(err => res.status(404).json({ err }));
+      })
+      .catch(err => console.log(err))
   }
 );
 
-// @route   POST api/posts/unlike/:id
-// @desc    Unlike post
-// @access  Private
+//route   POST api/posts/unlike/:id
+//desc    Unlike post
+//access  Private
 router.post(
   '/unlike/:id',
   passport.authenticate('jwt', { session: false }),
@@ -176,9 +180,7 @@ router.post(
   }
 );
 
-// @route   POST api/posts/comment/:id
-// @desc    Add comment to post
-// @access  Private
+
 router.post(
   '/comment/:id',
   passport.authenticate('jwt', { session: false }),
@@ -209,9 +211,6 @@ router.post(
   }
 );
 
-// @route   DELETE api/posts/comment/:id/:comment_id
-// @desc    Remove comment from post
-// @access  Private
 router.delete(
   '/comment/:id/:comment_id',
   passport.authenticate('jwt', { session: false }),

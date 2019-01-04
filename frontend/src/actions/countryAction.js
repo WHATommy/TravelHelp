@@ -36,10 +36,9 @@ export const getCountry = (country) => dispatch => {
             });
         })
         .catch(err =>
-            //dispatch({
-            //    type: GET_ERRORS,
-            //    payload: err.res.data
-            //})
-            console.log(err)
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.res.data
+            })
         )
 }

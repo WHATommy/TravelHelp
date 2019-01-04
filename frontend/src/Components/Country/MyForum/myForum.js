@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 import MyForumPosts from './myForumPosts';
 import { getMyPost } from '../../../actions/postAction'
 
-import axios from 'axios'
-
 class MyPosts extends Component {
     constructor(props) {
         super(props);

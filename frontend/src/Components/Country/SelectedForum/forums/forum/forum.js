@@ -20,6 +20,7 @@ class Forum extends Component {
 
     onLikeClick(id, event) {
         event.preventDefault();
+        console.log(id)
         if (this.props.auth.isAuthenticated) {
             this.props.likePost(id)
         } else {
@@ -29,6 +30,7 @@ class Forum extends Component {
 
     onUnlikeClick(id, event) {
         event.preventDefault();
+        console.log(id)
         if (this.props.auth.isAuthenticated) {
             this.props.unlikePost(id)
         } else {
@@ -45,11 +47,11 @@ class Forum extends Component {
 
     componentDidMount() {
         let likes = this.props.likes
+        console.log(likes)
         this.setState({ likes: likes });
     }
 
     render() {
-        const { errors } = this.state;
         return (
             <div className="post">
                 <div className="">
