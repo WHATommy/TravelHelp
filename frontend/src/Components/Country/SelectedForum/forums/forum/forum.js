@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import classnames from 'classnames';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { likePost, unlikePost, getPost } from '../../../../../actions/postAction'
+import { withRouter } from 'react-router-dom'
 
 class Forum extends Component {
     constructor(props) {
@@ -20,12 +20,20 @@ class Forum extends Component {
 
     onLikeClick(id, event) {
         event.preventDefault();
-        this.props.likePost(id)
+        if (this.props.auth.isAuthenticated) {
+            this.props.likePost(id)
+        } else {
+            this.props.history.push('/login')
+        }
     }
 
     onUnlikeClick(id, event) {
         event.preventDefault();
-        this.props.unlikePost(id)
+        if (this.props.auth.isAuthenticated) {
+            this.props.unlikePost(id)
+        } else {
+            this.props.history.push('/login')
+        }
     }
 
     componentDidUpdate() {
@@ -42,7 +50,6 @@ class Forum extends Component {
 
     render() {
         const { errors } = this.state;
-        console.log(errors)
         return (
             <div className="post">
                 <div className="">
@@ -80,4 +87,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 })
 
-export default connect(mapStateToProps, { likePost, unlikePost, getPost })(Forum)
+export default connect(mapStateToProps, { likePost, unlikePost, getPost })(withRouter(Forum))

@@ -33,11 +33,10 @@ export const getPost = (post) => dispatch => {
             console.log(posts)
         })
         .catch(err =>
-            //dispatch({
-            //    type: GET_ERRORS,
-            //    payload: err.res.data
-            //})
-            console.log(err)
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.res.data
+            })
         )
 }
 

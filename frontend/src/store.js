@@ -11,6 +11,7 @@ const store = createStore(
     initialState,
     compose(
         applyMiddleware(...middleware),
+        //Uncomment below to use Redux chrome extension
         //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 );
