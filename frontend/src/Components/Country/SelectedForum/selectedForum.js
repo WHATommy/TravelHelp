@@ -21,7 +21,6 @@ class SelectedForum extends Component {
     //TODO FIX LOOP
     componentDidUpdate() {
         const posts = this.props.postInfos.postInfos
-        console.log('--------------------------');
         if (!this.jsonEqual(posts, this.state.posts)) {
             this.setState({ posts });
         }

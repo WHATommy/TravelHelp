@@ -29,8 +29,6 @@ export const getPost = (post) => dispatch => {
                 type: GET_POSTS_INFO,
                 payload: posts
             })
-            console.log(res)
-            console.log(posts)
         })
         .catch(err =>
             dispatch({
