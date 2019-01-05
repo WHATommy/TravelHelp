@@ -1,7 +1,8 @@
-TravelHelps is a forum of traveling tips from other travelers. Know the country before you go & let others know 
+# Travel Helps
+A forum of traveling tips from other travelers. Know the country before you go & let others know 
 what to expect when visiting one!
 
-Installation steps: 
+### Installation steps: 
 
   1. In your terminal, run git clone git@github.com:WHATommy/TravelHelps.git
   2. Switch to TravelHelps directory(cd TravelHelps)
