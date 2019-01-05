@@ -16,10 +16,10 @@ what to expect when visiting one!
 
 ### Screenshots:
 
-![frontpage](./image/frontpage.png)
+![frontpage](./app/image/frontpage.png)
 
-![searchcountry](./image/searchcountry.png)
+![searchcountry](./app/image/searchcountry.png)
 
-![createpost](./image/createpost.png)
+![createpost](./app/image/createpost.png)
 
-![mypost](./image/mypost.png)
+![mypost](./app/image/mypost.png)
