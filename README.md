@@ -18,8 +18,8 @@ what to expect when visiting one!
 
 ![frontpage](./image/frontpage.png)
 
-![searchcountry](./image/searchcountry)
+![searchcountry](./image/searchcountry.png)
 
-![createpost](./image/createpost)
+![createpost](./image/createpost.png)
 
-![mypost](./image/mypost)
+![mypost](./image/mypost.png)
