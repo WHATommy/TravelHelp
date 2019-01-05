@@ -4,7 +4,7 @@ what to expect when visiting one!
 
 ### Installation steps: 
 
-  1. In your terminal, run git clone **https://github.com/WHATommy/TravelHelps.git**
+  1. In your terminal, run **git clone https://github.com/WHATommy/TravelHelps.git**
   2. Switch to TravelHelps directory(**cd TravelHelps**)
   3. Retrieve the dependencies(**run npm install**)
   4. Switch into the frontend folder(**cd frontend**)
