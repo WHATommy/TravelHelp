@@ -13,3 +13,13 @@ what to expect when visiting one!
   7. In the config folder, insert your own nonSQL database(ex. mLab)
   8. From the TravelHelps root directory, enter **npm run dev** to run the app on a local server
   9. Open your browser to **localhost:3000**(If it has not open automatically)
+
+### Screenshots:
+
+![frontpage](./image/frontpage.png)
+
+![searchcountry](./image/searchcountry)
+
+![createpost](./image/createpost)
+
+![mypost](./image/mypost)
