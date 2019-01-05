@@ -18,7 +18,7 @@ what to expect when visiting one!
 
 ![frontpage](./app/image/frontpage.png)
 
-![](./app/image/searchcountry.png)
+![searchcountry](./app/image/searchcountry.png)
 
 ![createpost](./app/image/createpost.png)
 
