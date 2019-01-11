@@ -2,8 +2,13 @@
 A forum of traveling tips from other travelers. Know the country before you go & let others know 
 what to expect when visiting one!
 
-### Demo: 
+### Demo Link: 
 https://travelhelps.herokuapp.com/
+
+### Demo Account:
+Email: testing@gmail.com 
+
+Password: testing
 
 ### Installation steps: 
 
