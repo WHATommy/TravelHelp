@@ -24,10 +24,10 @@ Password: testing
 
 ### Screenshots:
 
-![frontpage](./app/image/frontpage.png)
+![frontpage](./frontend/image/frontpage.png)
 
-![searchcountry](./app/image/searchcountry.png)
+![searchcountry](./frontend/image/searchcountry.png)
 
-![createpost](./app/image/createpost.png)
+![createpost](./frontend/image/createpost.png)
 
-![mypost](./app/image/mypost.png)
+![mypost](./frontend/image/mypost.png)
